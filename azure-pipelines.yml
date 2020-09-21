@@ -1,0 +1,21 @@
+name: $(date:yyyyMMdd)$(rev:.r).$(SourceBranchName)
+
+trigger:
+  batch: true
+  branches:
+    - dev
+    - master
+  paths:
+    include:
+      - notebooks
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'notebooks'
+    ArtifactName: 'demo_notebooks'
+    publishLocation: 'Container'
+  displayName: 'Publish demo notebooks'
