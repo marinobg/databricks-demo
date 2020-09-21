@@ -3,8 +3,9 @@ name: $(date:yyyyMMdd)$(rev:.r).$(SourceBranchName)
 trigger:
   batch: true
   branches:
-    - dev
-    - master
+    include:
+      - dev
+      - master
   paths:
     include:
       - notebooks
