@@ -4,3 +4,7 @@
 # COMMAND ----------
 
 print("Hello everyone!")
+
+# COMMAND ----------
+
+print("test")
